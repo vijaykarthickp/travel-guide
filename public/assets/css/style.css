@@ -1,0 +1,47 @@
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+body.home {
+  background: url('/assets/img/travel-guide.jpg');
+}
+body.nyc {
+  background: url('/assets/img/nyc.jpg');
+}
+.search-form {
+  width: 500px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid grey;
+
+}
+.home .search-form {
+  top: 48%;
+  position: absolute;
+  left: 35%;
+}
+.nyc .search-form {
+  top: 15%;
+  position: absolute;
+  left: 35%;
+}
+
+#city {
+  width: 200px;
+  height: 25px;
+}
+input[type="date"]:before {
+content: attr(placeholder) !important;
+color: #aaa;
+       margin-right: 0.5em;
+}
+input[type="date"]:focus:before,
+	input[type="date"]:valid:before {
+content: "";
+	}
+input[type="date"] {
+width: 203px;
+    height: 25px;
+}
