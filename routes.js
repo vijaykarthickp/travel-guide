@@ -1,20 +1,18 @@
 const colors = require('colors');
+const main_ctrl = require('./controllers/main_ctrl');
 
 exports.initialize = function(app) {
 
-  app.get('/', function (req, res) {
-    res.render('index');
+  app.use(function(req,res,next){
+    console.log(colors.yellow(Date.now()));
+    next();
   });
 
-  app.post('/', function(req, res) {
-    if(req.body.city && 'new york' == req.body.city.toLowerCase()) {
-      res.redirect('/city/nyc');
-    }
-  });
+  app.route('/')
+    .get(main_ctrl.home)
+    .post(main_ctrl.home_search);
 
-  app.get('/city/:city', function(req, res) {
-    console.log(req.params.city);
-    res.render('nyc');
-  });
+  app.route('/city/:city')
+  .get(main_ctrl.city_show);
 
 }
