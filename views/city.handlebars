@@ -3,12 +3,7 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
-<body class="nyc">
-   <form action="/" method="post" class="search-form">
-     <input type="text" name="city" id="city" value="new york">
-     <input type="date" name="date" id="data" placeholder="Journey date">
-     <input type="submit" value="Suggest Me !!!">
-   </form>
+<body class="{{ city }}">
+  {{> form }}
 </body>
-
 </html>

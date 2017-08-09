@@ -4,7 +4,8 @@
   "description": "Travel Guide App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "author": "Vijay",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "colors": "^1.1.2",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
-    "handlebars": "^4.0.10"
+    "handlebars": "^4.0.10",
+    "jsonfile": "^3.0.1"
   }
 }
