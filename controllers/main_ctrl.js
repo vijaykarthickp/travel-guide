@@ -2,7 +2,7 @@ exports.home = function(req, res) {
   res.render('index');
 }
 
-exports.search = function(req, res){
+exports.home_search = function(req, res){
   if(req.body.city && 'new york' == req.body.city.toLowerCase()) {
     res.redirect('/city/nyc');
   }
@@ -10,5 +10,5 @@ exports.search = function(req, res){
 
 exports.city_show = function(req, res) {
   console.log(req.params.city);
-  res.render('nyc');
+  res.render('city');
 }
