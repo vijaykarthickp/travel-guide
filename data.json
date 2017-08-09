@@ -1,0 +1,104 @@
+{
+  "newyorkcity" : {
+    "hotels" : [ {
+        "title" : "Staybridge Suites Times Square",
+        "image" : "https://exp.cdn-hotels.com/hotels/3000000/2750000/2745600/2745523/2745523_90_z.jpg",
+        "link" : "https://www.hotels.com/hotel/details.html?q-check-out=2017-08-09&FPQ=4&q-check-in=2017-08-08&WOE=3&WOD=2&q-room-0-children=0&pa=1&tab=description&JHR=3&hotel-id=321582&q-room-0-adults=2&YGF=0&MGT=1&ZSX=0&SYE=3",
+        "address": "340 W 40 Street, New York, NY, 10018, United States of America, 800-491-6126",
+        "phone" : "000-00-9999",
+        "timings": "9am to 6pm",
+        "tags" : "winter",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      },
+      {
+        "title" : "NYLO New York City",
+        "image" : "https://exp.cdn-hotels.com/hotels/1000000/20000/12200/12117/922bba74_z.jpg",
+        "link" : "https://www.hotels.com/hotel/details.html?q-check-out=2017-08-09&FPQ=3&q-check-in=2017-08-08&WOE=3&WOD=2&q-room-0-children=0&pa=2&tab=description&JHR=2&hotel-id=150310&q-room-0-adults=2&YGF=0&MGT=1&ZSX=0&SYE=3",
+        "address": "2178 Broadway at W 77th St, New York, NY, 10024 United States",
+        "phone" : "866-573-4235",
+        "timings": "9am to 6pm",
+        "tags" : "summer",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      }
+    ],
+    "events" : [ {
+        "title" : "ABC",
+        "image" : "",
+        "link" : "",
+        "address": "",
+        "phone" : "000-00-9999",
+        "timings": "9am to 6pm",
+        "tags" : "winter",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      },
+      {
+        "title" : "ABC",
+        "image" : "",
+        "link" : "",
+        "address": "",
+        "timings": "9am to 6pm",
+        "tags" : "summer",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      }
+    ],
+    "things-todo": [ {
+        "title" : "ABC",
+        "image" : "",
+        "link" : "",
+        "address": "",
+        "phone" : "000-00-9999",
+        "timings": "9am to 6pm",
+        "tags" : "winter",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      },
+      {
+        "title" : "ABC",
+        "image" : "",
+        "link" : "",
+        "address": "",
+        "timings": "9am to 6pm",
+        "tags" : "summer",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      }
+    ],
+    "restaurants" : [ {
+        "title" : "ABC",
+        "image" : "",
+        "link" : "",
+        "address": "",
+        "phone" : "000-00-9999",
+        "timings": "9am to 6pm",
+        "tags" : "winter",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      },
+      {
+        "title" : "ABC",
+        "image" : "",
+        "link" : "",
+        "address": "",
+        "timings": "9am to 6pm",
+        "tags" : "summer",
+        "ratings" : "4",
+        "totalRatings" : "5"
+      }
+    ],
+    "articles" : [ {
+        "title" : "asd",
+        "image" : "sdasd",
+        "link" : "asdsad"
+      },
+      {
+        "title" : "sdasd",
+        "image" : "asdsad",
+        "link" : "asdasd"
+      }
+    ]
+  }
+}
