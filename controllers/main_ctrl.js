@@ -9,6 +9,5 @@ exports.home_search = function(req, res){
 }
 
 exports.city_show = function(req, res) {
-  console.log(req.params.city);
-  res.render('city');
+  res.render('city', {city: req.params.city});
 }
