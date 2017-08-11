@@ -27,7 +27,7 @@ function page_callback(page, req, res){
      async.waterfall([
     //Search for processed data
     function(callback){
-      const data = process.cwd() + '/data.json';
+      const data = process.cwd() + '/list.json';
 
       jsonFile.readFile(data, function(err, jsonString) {
         if(err)
@@ -37,13 +37,6 @@ function page_callback(page, req, res){
            searchData[property] = new Array();
            
            for(index in jsonString[city][property]) {
-            //console.log(jsonString[city][property][index]);
-            /*if (typeof jsonString[city][property][index].tags == "undefined") {
-               searchData[property].push(jsonString[city][property][index]);
-             }
-             else if ( jsonString[city][property][index].tags.indexOf(season) != -1) {
-               searchData[property].push(jsonString[city][property][index]);
-             }*/
              searchData[property].push(jsonString[city][property][index]);
            }
          }
