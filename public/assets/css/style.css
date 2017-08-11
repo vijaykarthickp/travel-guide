@@ -236,7 +236,7 @@ canvas {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-  z-index: 99999999;
+  z-index: 10000000000;
 }
 .horizontal .tiles .overlay:target {
   visibility: visible;
@@ -397,7 +397,7 @@ width: 203px;
 
 .search-form {
   position: absolute;
-  z-index: 10000000;
+  z-index: 10000;
   left: 35%;
   top: 10px;
 }

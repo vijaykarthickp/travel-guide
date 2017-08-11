@@ -114,11 +114,12 @@ exports.city_show = function(req, res) {
       const dateExp = date.split('-');
       const month = dateExp[1]*1;
 
-      seasonCheck = month >=3 & month <=5 ? 'Spring' : '';
+      seasonCheck = month >=3 & month <=5 ? 'spring' : '';
       seasonCheck = !seasonCheck && month >=6 & month <=8 ? 'summer' : seasonCheck;
       seasonCheck = !seasonCheck && month >= 9 && month <= 11 ? 'autumn' : seasonCheck;
       seasonCheck = !seasonCheck && (month > 11 || month < 3) ? 'winter' : seasonCheck;
       season = seasonCheck;
+      console.log(colors.yellow(seasonCheck));
       jsonFile.readFile(data, function(err, jsonString) {
         if(err)
           return callback(err);
