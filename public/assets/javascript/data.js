@@ -40,8 +40,10 @@ $(function(){
             [3, 3, 1]           // ... and 1 drop of size from 3 - 6 ...
         ],
         100);                   // ... every 100ms
+    }else if($('body').hasClass('winter')){
+      console.log("ITS WINTER");
+      $('#header-parent').snowfall({image :"../../assets/img/flake.png", minSize: 5, maxSize:25});
     }
-
   });
 
 });
