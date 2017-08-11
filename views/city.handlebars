@@ -6,8 +6,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../../assets/javascript/data.js"></script>
 <script src="../../assets/javascript/city.js"></script>
+<script src="../../assets/javascript/rainyday.min.js"></script>
 </head>
-<body class="{{ city }} horizontal">
+<body class="{{ city }} horizontal {{season}}">
   <div class="box">
     <section class="header-bar">
       <div class="logo">
@@ -44,12 +45,15 @@
         </span>
       </button>
     </section>
-    <section class="header">
-      <div class="city-title">
-        <h1>New York City</h1>
-      </div>
-      {{> form }}
-    </section>
+    <div id="header-parent">
+      <section class="header" >
+        <img class="bg-img" id="background-img" src="../../assets/img/nyc.jpg">
+        <div class="city-title">
+          <h1>New York City</h1>
+        </div>
+        {{> form }}
+      </section>
+    </div>
     <section class="content">
       <figure class="left-rail">
         {{> filters }}
@@ -89,7 +93,7 @@
     {{/if}}
     {{#if data.articles}}
       <figure class="tiles column">
-        <div class="category"><h2>Related Articles</h2></div>
+        <div class="category"><h2>{{cityText}} Travel Ideas</h2></div>
         {{#each data.articles}}
           {{> tiles data=this showicons="true"}}
         {{/each}}
