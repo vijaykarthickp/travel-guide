@@ -135,7 +135,7 @@ exports.city_show = function(req, res) {
               else if (seasonQuery) {
                 seasonsQ = seasonQuery.split(',');
                 seasonsQ.forEach(function(season_q) {
-                  if ( jsonString[city][property][index].tags.indexOf(season_q) != -1) {
+                  if ( jsonString[city][property][index].tags.indexOf(season_q) != -1 && season_q) {
                     searchData[property].push(jsonString[city][property][index]);
                   }
                 });
@@ -221,8 +221,7 @@ exports.city_show = function(req, res) {
       else {
 
       }
-      console.log(filterObj);
-      console.log(seasonQuery);
+
       return res.render('city', {
         city: city,
         date: date,
