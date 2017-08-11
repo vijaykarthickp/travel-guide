@@ -392,3 +392,10 @@ width: 203px;
   float:right;
   width: 20%;
 }
+
+.search-form {
+  position: absolute;
+  z-index: 10000000;
+  left: 35%;
+  top: 10px;
+}
