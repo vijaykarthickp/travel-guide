@@ -391,6 +391,8 @@ width: 203px;
 .saved-lists p {
   float:right;
   width: 20%;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
 }
 
 .search-form {
