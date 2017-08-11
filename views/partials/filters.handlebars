@@ -1,7 +1,9 @@
 <figure class="filters">
-<h3>Filters:</h3>
-<p>Hotels</p>
-<p>Restaurants</p>
-<p>POI</p>
-<p>Things to Do</p>
+  <div class="filters-header">
+    Filters
+  </div>
+  {{> filters-category label="Places to Stay" value="hotels" }}
+  {{> filters-category label="Food & Drinks" value="restaurants" }}
+  {{> filters-category label="What to See" value="events" }}
+  {{> filters-category label="Things to Do" value="things-to-do" }}
 </figure>

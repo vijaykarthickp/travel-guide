@@ -4,54 +4,114 @@ body {
   padding: 0px;
 }
 body.home {
-  background: url('/assets/img/travel-guide.jpg');
+  background: url('assets/img/travel-guide.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
-body.nyc {
-  background: url('/assets/img/nyc.jpg');
-}
+/*body.nyc {
+  background: url('../img/nyc.jpg');
+}*/
 .search-form {
   width: 500px;
   background: white;
   padding: 10px;
   border-radius: 5px;
   border: 2px solid grey;
-
+  margin: 0 auto;
 }
 .home .search-form {
   top: 48%;
   position: absolute;
   left: 35%;
 }
-.nyc .search-form {
+/*.nyc .search-form {
   top: 15%;
   position: absolute;
   left: 35%;
-}
+}*/
 
-#city {
-  width: 200px;
-  height: 25px;
+.horizontal .header .city-title {
+  position: absolute;
+  top: 65px;
+  text-align: center;
+  width: 100%;
 }
-input[type="date"]:before {
-content: attr(placeholder) !important;
-color: #aaa;
-       margin-right: 0.5em;
+.horizontal .header .city-title h1 {
+  font-family: arial, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
 }
-input[type="date"]:focus:before,
-	input[type="date"]:valid:before {
-content: "";
-	}
-input[type="date"] {
-width: 203px;
-    height: 25px;
+.horizontal .search-form {
+  margin-top: 160px;
+  margin-bottom: 20px;
 }
-
-
-.filters {
+.horizontal .left-rail {
+  position: absolute;
+  top: 263px;
+  left: 20px;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  text-align: left;
+}
+.horizontal .filters {
+  padding: 0 0 10px 0;
+  border: 1px solid #eee;
+  background: none;
+}
+.horizontal .lists {
+  padding: 0 0 10px 0;
+  border: 1px solid #eee;
+  background: none;
+  display: block;
+}
+.horizontal .filters p,
+.horizontal .lists p {
+  text-align: left;
+}
+.horizontal .filters-header,
+.horizontal .lists-header {
+  background-color: #68a19a;
+  padding: 10px 10px 10px 15px;
+  color: #fff;
+  font-family: arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.horizontal .filters-category,
+.horizontal .lists-category {
+  color: #000;
+  font-size: 12px;
+  padding: 5px 0;
+  font-family: arial, sans-serif;
+  width: 100%;
+  margin-left: 5px;
+}
+.horizontal .filters-category a,
+.horizontal .lists-category a {
+  padding: 0px 15px 10px 15px;
+  text-decoration: none;
+  color: #000;
+}
+.horizontal .filters-category .filters {
+  float: left;
+  width: auto;
+}
+.horizontal .filters-category label {
+  display: inline-block;
+  margin-left: 10px;
+}
+.filters,
+.lists {
   width: 150px;
   background: rgba(0,0,0,0.4);
   padding: 10px;
-  margin: 10px;
+  margin: 0;
   display: inline-block;
   text-align: left;
   vertical-align: top;
@@ -73,15 +133,17 @@ width: 203px;
   font-family: arial, sans-serif;
 }
 .box {
-  display: flex;
-  flex-flow: column;
+  display: block;
+  /*display: flex;*/
+  /*flex-flow: column;*/
   height: 100%;
 }
 .header {
   width: 100%;
   overflow: hidden;
-  margin-top: 150px;
-  flex: 0 1 100px;
+  flex: 0 1 250px;
+  background: url('../../assets/img/nyc.jpg');
+  background-position: center;
 }
 .content {
   width: 100%;
@@ -89,32 +151,114 @@ width: 203px;
   margin-top: 30px;
   text-align: center;
   flex: 1 1 auto;
+  /*background-color: #f5f5f5;*/
 }
 .footer {
   flex: 0 1 1px;
+}
+.horizontal .tiles.column {
+  float: right;
+  width: 81%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  background: none;
+  margin: 0px 30px 20px 0;
+  padding: 0 0 10px 0;
+}
+.horizontal .tiles {
+  display: inline-block;
+  width: 250px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.horizontal .tiles .category h2 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 5px;
+}
+.horizontal .tiles.deck {
+  padding: 10px;
+  width: 92%;
+  color: #000;
+}
+.horizontal .tiles.deck p {
+  -webkit-margin-after: 0;
+}
+.horizontal .tiles .reviews {
+  font-size: 12px;
+  padding-left: 5px;
+}
+.horizontal .tiles img {
+  max-width: 250px;
+  vertical-align: middle;
+}
+.horizontal .tiles.column .venue {
+  position: relative;
+}
+.horizontal .tiles.column .venue .favorites {
+  float: left;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  padding: 5px;
+}
+.horizontal .tiles.column .venue .favorites .favorites-icon {
+  border-radius: 20px;
+  padding: 5px;
+  background-color: rgba(255,255,255,0.7);
+}
+.horizontal .tiles.column .venue .favorites .favorites-icon img {
+  width: 20px;
+  height: 20px;
+}
+.horizontal .tiles.deck h3 a {
+  white-space: normal;
 }
 .tiles.column {
   width: 250px;
   background: rgba(0,0,0,0.4);
   padding: 10px;
-  margin: 10px;
+  margin: 0;
   font-family: arial, sans-serif;
   display: inline-block;
   text-align: left;
   vertical-align: top;
-  overflow: auto;
-  max-height: 57vh;
+  /*overflow: auto;*/
+  /*max-height: 57vh;*/
 }
-
 .tiles {
   width: 100%;
   background: rgba(255,255,255,1);
   margin-bottom: 10px;
 }
+.tiles.deck h3 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
 .tiles.deck h3 a {
   text-decoration: none;
+  color: #000;
 }
 .tiles.deck {
   padding: 10px 25px;
   width: 80%;
+}
+#city {
+  width: 190px;
+  height: 25px;
+}
+input[type="date"]:before {
+content: attr(placeholder) !important;
+color: #aaa;
+       margin-right: 0.5em;
+}
+input[type="date"]:focus:before,
+	input[type="date"]:valid:before {
+content: "";
+	}
+input[type="date"] {
+width: 203px;
+    height: 25px;
 }

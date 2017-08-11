@@ -22,7 +22,7 @@ exports.city_show = function(req, res) {
   async.waterfall([
     //Search for processed data
     function(callback){
-      const data = '../data.json';
+      const data = process.cwd() + '/data.json';
       const dateExp = date.split('-');
       const month = dateExp[1]*1;
 
