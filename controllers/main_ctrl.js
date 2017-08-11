@@ -221,7 +221,10 @@ exports.city_show = function(req, res) {
       else {
 
       }
-
+      let cityText = "";
+      if (city == "newyorkcity") {
+        cityText = "New York City"
+      }
       return res.render('city', {
         city: city,
         date: date,
@@ -229,6 +232,7 @@ exports.city_show = function(req, res) {
         listData: listData,
         filter : filterObj,
         season : season,
+        cityText: cityText
       });
     }
   });
