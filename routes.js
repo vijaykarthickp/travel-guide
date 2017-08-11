@@ -7,12 +7,17 @@ exports.initialize = function(app) {
     console.log(colors.yellow(Date.now()));
     next();
   });
+
+  app.route('/list')
+  .get(main_ctrl.list);
+
   console.log("asdsadsd");
   app.route('/')
     .get(main_ctrl.home)
-    .post(main_ctrl.home_search)
+    .post(main_ctrl.home_search);
 
   app.route('/city/:city/:date')
   .get(main_ctrl.city_show);
+
 
 }

@@ -5,7 +5,20 @@ var bodyParser = require('body-parser');
 var exphbs  = require('express-handlebars');
 
 // view engine setup
-var hbs = exphbs.create({ /* config */ });
+var hbs = exphbs.create({
+  helpers: {
+    'filterChecked': function (filter, text) {
+      if (filter[text] == "true") {
+        return 'checked';
+      }
+    },
+    'filterActive' : function (filter, text) {
+      if (filter[text] == "true") {
+        return 'active';
+      }
+    }
+  }
+ });
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

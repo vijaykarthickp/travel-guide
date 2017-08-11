@@ -1,6 +1,6 @@
 <div class="filters-category">
-  <div class="checkbox">
-    <input type="checkbox" value="{{ value }}" id="checkbox" name="{{ value }}" checked class ="filters"/>
-    <label for="{{ value }}">{{ label }}</label>
-  </div>
+    <div class="checkbox">
+      <input type="checkbox" value="{{ value }}" id="checkbox" name="{{ value }}" {{filterChecked filter value}} class ="{{class}} {{filterActive filter value}}"/>
+      <label for="{{ value }}">{{ label }}</label>
+    </div>
 </div>
