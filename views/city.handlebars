@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body class="{{ city }} horizontal">
@@ -15,15 +15,7 @@
     <figure class="left-rail">
       {{> filters }}
     </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Hotels</h2></div>
-        {{> tiles }}
-        {{> tiles }}
-        {{> tiles }}
-        {{> tiles }}
-        {{> tiles }}
-      </div>
-    </figure>
+    {{> content}}
   </section>
 </body>
 </html>
