@@ -91,12 +91,12 @@
     ],
     "articles" : [ {
         "title" : "asd",
-        "image" : "sdasd",
+        "image" : "",
         "link" : "asdsad"
       },
       {
         "title" : "sdasd",
-        "image" : "asdsad",
+        "image" : "",
         "link" : "asdasd"
       }
     ]

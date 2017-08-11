@@ -17,37 +17,46 @@
       {{> filters }}
       {{> lists }}
     </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Hotels</h2></div>
-        {{#each data.hotels}}
+    {{#if data.hotels}}
+      <figure class="tiles column">
+        <div class="category"><h2>Hotels</h2></div>
+          {{#each data.hotels}}
+            {{> tiles data=this }}
+          {{/each}}
+        </figure>
+    {{/if}}
+    {{#if data.restaurants}}
+      <figure class="tiles column">
+        <div class="category"><h2>Food & Drinks</h2></div>
+        {{#each data.restaurants}}
           {{> tiles data=this }}
         {{/each}}
-      </div>
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Food & Drinks</h2></div>
-      {{#each data.restaurants}}
-        {{> tiles data=this }}
-      {{/each}}
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>What to See</h2></div>
-      {{#each data.events}}
-        {{> tiles data=this }}
-      {{/each}}
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Things to Do</h2></div>
-      {{#each data.things-todo}}
-        {{> tiles data=this }}
-      {{/each}}
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Related Articles</h2></div>
-      {{#each data.articles}}
-        {{> tiles data=this }}
-      {{/each}}
-    </figure>
+      </figure>
+    {{/if}}
+    {{#if data.events}}
+      <figure class="tiles column">
+        <div class="category"><h2>What to See</h2></div>
+        {{#each data.events}}
+          {{> tiles data=this }}
+        {{/each}}
+      </figure>
+    {{/if}}
+    {{#if data.things-todo}}
+      <figure class="tiles column">
+        <div class="category"><h2>Things to Do</h2></div>
+        {{#each data.things-todo}}
+          {{> tiles data=this }}
+        {{/each}}
+      </figure>
+    {{/if}}
+    {{#if data.articles}}
+      <figure class="tiles column">
+        <div class="category"><h2>Related Articles</h2></div>
+        {{#each data.articles}}
+          {{> tiles data=this }}
+        {{/each}}
+      </figure>
+    {{/if}}
   </section>
 </body>
 </html>

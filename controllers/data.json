@@ -91,13 +91,13 @@
     ],
     "articles" : [ {
         "title" : "asd",
-        "image" : "sdasd",
-        "link" : "asdsad"
+        "image" : "",
+        "link" : "vijay"
       },
       {
         "title" : "sdasd",
-        "image" : "asdsad",
-        "link" : "asdasd"
+        "image" : "",
+        "link" : "vijay2"
       }
     ]
   }

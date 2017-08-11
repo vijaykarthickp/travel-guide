@@ -1,6 +1,7 @@
 const jsonFile = require('jsonfile');
 const async = require('async');
-
+const colors = require('colors');
+const url = require('url');
 
 exports.home = function(req, res) {
   res.render('index');
@@ -16,7 +17,9 @@ exports.home_search = function(req, res){
 exports.city_show = function(req, res) {
   console.log(req.params.city);
   console.log(req.params.date);
-
+  const url_parts = url.parse(req.url, true);
+  let query = url_parts.query;
+  console.log(query.filters);
   let city = req.params.city === 'nyc' ? 'newyorkcity' : req.params.city;
   let date = req.params.date;
   let processedData = {};
@@ -32,7 +35,6 @@ console.log("END");
   async.waterfall([
     //Search for processed data
     function(callback){
-      console.log("FR")
       const data = process.cwd() + '/data.json';
       const dateExp = date.split('-');
       const month = dateExp[1]*1;
@@ -47,7 +49,6 @@ console.log("END");
           return callback(err);
 
          let searchData = new Array();
-         console.log(jsonString[city]);
 
          Object.keys(jsonString[city])
          .forEach((property) => {
@@ -74,11 +75,54 @@ console.log("END");
         data: err
       });
     }else{
+      filters = query.filters;
+      let filterObj = {};
+      if (typeof filters !="undefined" || filters!="") {
+
+        filters = filters.split(',');
+        filters.forEach(function(filter) {
+          if (filter == 'hotels') {
+            filterObj.hotels = "true";
+          }
+          if (filter == 'events') {
+            filterObj.events = "true";
+          }
+          if (filter == 'things_todo') {
+            filterObj.things_todo = "true";
+          }
+          if (filter == 'restaurants') {
+            filterObj.restaurants = "true";
+          }
+        });
+
+        if (typeof filterObj.hotels == "undefined") {
+          delete result['hotels'];
+        }
+        if (typeof filterObj.events == "undefined") {
+          delete result['events'];
+        }
+        if (typeof filterObj.things_todo == "undefined") {
+          delete result['things-todo'];
+        }
+        if (typeof filterObj.restaurants == "undefined") {
+          delete result['restaurants'];
+        }
+      }
+      else {
+
+        filterObj.hotels = "true";
+        filterObj.events = "true";
+        filterObj.things_todo = "true";
+        filterObj.restaurants = "true";
+      }
+      console.log(result);
       return res.render('city', {
         city: city,
         date: date,
         data: result,
-        listData: listData
+        listData: listData,
+        filter : filterObj
+
       });
     }
   });
