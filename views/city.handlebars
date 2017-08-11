@@ -59,7 +59,7 @@
       <figure class="tiles column">
         <div class="category"><h2>Hotels</h2></div>
           {{#each data.hotels}}
-            {{> tiles data=this }}
+            {{> tiles data=this showicons="true"}}
           {{/each}}
         </figure>
     {{/if}}
@@ -67,15 +67,15 @@
       <figure class="tiles column">
         <div class="category"><h2>Food & Drinks</h2></div>
         {{#each data.restaurants}}
-          {{> tiles data=this }}
+          {{> tiles data=this showicons="true"}}
         {{/each}}
       </figure>
     {{/if}}
     {{#if data.events}}
       <figure class="tiles column">
-        <div class="category"><h2>What to See</h2></div>
+        <div class="category"><h2>Events</h2></div>
         {{#each data.events}}
-          {{> tiles data=this }}
+          {{> tiles data=this showicons="true"}}
         {{/each}}
       </figure>
     {{/if}}
@@ -83,7 +83,7 @@
       <figure class="tiles column">
         <div class="category"><h2>Things to Do</h2></div>
         {{#each data.things-todo}}
-          {{> tiles data=this }}
+          {{> tiles data=this showicons="true"}}
         {{/each}}
       </figure>
     {{/if}}
@@ -91,7 +91,7 @@
       <figure class="tiles column">
         <div class="category"><h2>Related Articles</h2></div>
         {{#each data.articles}}
-          {{> tiles data=this }}
+          {{> tiles data=this showicons="true"}}
         {{/each}}
       </figure>
     {{/if}}
