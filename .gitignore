@@ -1,2 +1,7 @@
 node_modules
 *.git
+.DS_Store
+.gitignore.swp
+public/.DS_Store
+public/assets/.DS_Store
+views/.DS_Store
