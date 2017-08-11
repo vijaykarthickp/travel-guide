@@ -51,7 +51,7 @@
         "address": "79 Crosby St, New York, NY 10012",
         "phone" : "866-573-4235",
         "timings": "9am to 6pm",
-        "tags" : "spring,summer,autumn,winter",
+        "tags" : "winter",
         "ratings" : "4",
         "totalRatings" : "653"
       }
@@ -154,7 +154,7 @@
         "link" : "http://www.travelandleisure.com/travel-guide/new-york-city/things-to-do/one-world-trade-center",
         "address": "1 World Financial Center, New York, NY 10007 United States",
         "timings": "9am to 6pm",
-        "tags" : "spring,summer,autumn,winter",
+        "tags" : "spring",
         "ratings" : "4",
         "totalRatings" : "5"
       }
@@ -212,14 +212,44 @@
       }
     ],
     "articles" : [ {
-        "title" : "asd",
-        "image" : "",
-        "link" : "asdsad"
+        "title" : "Operation Vacation New York City",
+        "image" : "https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1502385479%2Ftime-hotel-new-york-OVTIMEHOTEL0817.jpg%3Fitok%3DwkM9c0JR&w=1600&q=60",
+        "link" : "http://www.travelandleisure.com/operation-vacation/time-new-york-8-11-2017",
+        "address": "15 E 7th St., New York, NY 10003 United States",
+        "timings": "9am to 6pm",
+        "tags" : "spring",
+        "ratings" : "4",
+        "totalRatings" : "943"
       },
       {
-        "title" : "sdasd",
-        "image" : "",
-        "link" : "asdasd"
+        "title" : "Cheetos Opening Fancy Pop-up",
+        "image" : "https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1502289372%2Fcheetos-tacos-CHEETOS0817.jpg%3Fitok%3DZjywcBxG&w=1600&q=60",
+        "link" : "http://www.travelandleisure.com/syndication/cheetos-restaurant-new-york",
+        "address": "15 E 7th St., New York, NY 10003 United States",
+        "timings": "9am to 6pm",
+        "tags" : "summer",
+        "ratings" : "4",
+        "totalRatings" : "812"
+      },
+      {
+        "title" : "The Traveler's Guide to New York",
+        "image" : "https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2Fharlem0915-thececil.jpg%3Fitok%3D5IXsTgcn&w=1600&q=60",
+        "link" : "http://www.travelandleisure.com/articles/best-way-to-experience-harlem",
+        "address": "15 E 7th St., New York, NY 10003 United States",
+        "timings": "9am to 6pm",
+        "tags" : "autumn",
+        "ratings" : "4",
+        "totalRatings" : "812"
+      },
+      {
+        "title" : "Mast Brothers Chocolate Factory",
+        "image" : "https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1442983389%2FMASTBROS0915-2.jpg%3Fitok%3DeXq87m0x&w=1600&q=60",
+        "link" : "http://www.travelandleisure.com/articles/mast-brothers-chocolate-tour",
+        "address": "15 E 7th St., New York, NY 10003 United States",
+        "timings": "9am to 6pm",
+        "tags" : "winter",
+        "ratings" : "4",
+        "totalRatings" : "812"
       }
     ]
   }

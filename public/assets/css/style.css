@@ -75,6 +75,7 @@ body.home {
   top: 110px;
   text-align: center;
   width: 100%;
+  z-index: 1;
 }
 .horizontal .header .city-title h1 {
   font-family: arial, sans-serif;
@@ -105,7 +106,7 @@ body.home {
 }
 .horizontal .lists {
   padding: 0 0 10px 0;
-  border: 1px solid #eee;
+  /*border: 1px solid #eee;*/
   background: none;
   display: block;
 }
@@ -181,10 +182,21 @@ body.home {
 }
 .header {
   width: 100%;
+  /*height:*/
   overflow: hidden;
   flex: 0 1 250px;
-  background: url('../../assets/img/nyc.jpg');
+  /*background: url('../../assets/img/nyc.jpg');*/
   background-position: center;
+}
+.bg-img {
+  width: 100%;
+  height: 230px;
+  /*transform: scale(0.3,0.3);*/
+  z-index: -40;
+}
+canvas {
+  top:45px !important;
+  z-index: 0 !important;
 }
 .content {
   width: 100%;
@@ -309,6 +321,11 @@ body.home {
   padding: 5px;
   background-color: rgba(255,255,255,0.7);
 }
+.horizontal .lists .tiles.column .venue .favorites .favorites-icon {
+  border-radius: 20px;
+  padding: 5px;
+  background-color: transparent;
+}
 .horizontal .tiles.column .venue .favorites .favorites-icon img {
   width: 20px;
   height: 20px;
@@ -374,4 +391,31 @@ width: 203px;
 .saved-lists p {
   float:right;
   width: 20%;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.search-form {
+  position: absolute;
+  z-index: 10000000;
+  left: 35%;
+  top: 10px;
+}
+
+#share-buttons {
+  height: 41px;
+  overflow: hidden;
+  float: right;
+}
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
+
+.saved-lists p {
+    margin: 0px;
 }
