@@ -84,6 +84,14 @@
           {{/each}}
         </figure>
       {{/if}}
+      {{#if data.articles}}
+        <figure class="tiles column">
+          <div class="category"><h2>Related Articles</h2></div>
+          {{#each data.articles}}
+            {{> tiles data=this showicons="true"}}
+          {{/each}}
+        </figure>
+      {{/if}}
   </section>
 </body>
 </html>
