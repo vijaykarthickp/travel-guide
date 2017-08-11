@@ -6,6 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../../assets/javascript/data.js"></script>
 <script src="../../assets/javascript/city.js"></script>
+<script src="../../assets/javascript/rainyday.min.js"></script>
 </head>
 <body class="{{ city }} horizontal">
   <div class="box">
@@ -44,12 +45,15 @@
         </span>
       </button>
     </section>
-    <section class="header">
-      <div class="city-title">
-        <h1>New York City</h1>
-      </div>
-      {{> form }}
-    </section>
+    <div id="header-parent">
+      <section class="header" >
+        <img class="bg-img" id="background-img" src="../../assets/img/nyc.jpg">
+        <div class="city-title">
+          <h1>New York City</h1>
+        </div>
+        {{> form }}
+      </section>
+    </div>
     <section class="content">
     <figure class="left-rail">
       {{> filters }}
