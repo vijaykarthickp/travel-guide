@@ -15,10 +15,10 @@ exports.home_search = function(req, res){
 }
 
 exports.list = function(req, res){
-  page_callback('list', req, res);
-}
-
-function page_callback(page, req, res){
+  const url_parts = url.parse(req.url, true);
+  let query = url_parts.query;
+  let season_q = query.season;
+  console.log(colors.red(season_q));
   let city = req.params.city === 'nyc' ? 'newyorkcity' : req.params.city;
   let date = req.params.date;
   let processedData = {};
@@ -37,7 +37,7 @@ function page_callback(page, req, res){
          let searchData = new Array();
          for(const property in jsonString[city]) {
            searchData[property] = new Array();
-           
+
            for(index in jsonString[city][property]) {
              searchData[property].push(jsonString[city][property][index]);
            }
@@ -48,13 +48,14 @@ function page_callback(page, req, res){
   ], function(err, result) {
     if(err){
       console.log(err);
-      return res.render(page, {
-        date: err
+      return res.render('list', {
+        data: err
       });
     }else{
-             // console.log('result');
-      return res.render(page, {
-        data: result
+      console.log(colors.red(season_q));
+      return res.render('list', {
+        data: result,
+        season: season_q
       });
     }
   });

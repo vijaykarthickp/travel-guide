@@ -2,7 +2,9 @@
   <div class="venue">
     <div class="favorites">
       <div class="favorites-icon">
-        <a href="#"><img src="../../assets/img/icons-heart.png"></a>
+        {{#if showicons}}
+          <a href="#"><img src="../../assets/img/icons-heart.png"></a>
+        {{/if}}
       </div>
     </div>
     <a href="#popup1"><img src="{{image}}"></a>
