@@ -399,3 +399,17 @@ width: 203px;
   left: 35%;
   top: 10px;
 }
+
+#share-buttons {
+  height: 41px;
+  overflow: hidden;
+  float: right;
+}
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
