@@ -14,6 +14,59 @@ exports.home_search = function(req, res){
   }
 }
 
+exports.list = function(req, res){
+  page_callback('list', req, res);
+}
+
+function page_callback(page, req, res){
+  let city = req.params.city === 'nyc' ? 'newyorkcity' : req.params.city;
+  let date = req.params.date;
+  let processedData = {};
+  let season = 'summer';
+
+  city = (city == '' || typeof city == "undefined") ? 'newyorkcity' : city;
+
+     async.waterfall([
+    //Search for processed data
+    function(callback){
+      const data = process.cwd() + '/data.json';
+
+      jsonFile.readFile(data, function(err, jsonString) {
+        if(err)
+          callback(err);
+         let searchData = new Array();
+         for(const property in jsonString[city]) {
+           searchData[property] = new Array();
+           
+           for(index in jsonString[city][property]) {
+            //console.log(jsonString[city][property][index]);
+            /*if (typeof jsonString[city][property][index].tags == "undefined") {
+               searchData[property].push(jsonString[city][property][index]);
+             }
+             else if ( jsonString[city][property][index].tags.indexOf(season) != -1) {
+               searchData[property].push(jsonString[city][property][index]);
+             }*/
+             searchData[property].push(jsonString[city][property][index]);
+           }
+         }
+         return callback(null, searchData);
+      });
+    }
+  ], function(err, result) {
+    if(err){
+      console.log(err);
+      return res.render(page, {
+        date: err
+      });
+    }else{
+             // console.log('result');
+      return res.render(page, {
+        data: result
+      });
+    }
+  });
+}
+
 exports.city_show = function(req, res) {
   console.log(req.params.city);
   console.log(req.params.date);
