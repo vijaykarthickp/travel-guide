@@ -1,7 +1,7 @@
 <div class="filters-category">
   <div class="filters-category">
     <div class="checkbox">
-      <input type="checkbox" value="{{ value }}" id="checkbox" name="{{ value }}" checked class ="filters"/>
+      <input type="checkbox" value="{{ value }}" id="checkbox" name="{{ value }}" {{#if filterChecked}}checked{{/if}} class ="filters-check {{#if filterChecked}}active{{/if}}"/>
       <label for="{{ value }}">{{ label }}</label>
     </div>
     <div></div>
