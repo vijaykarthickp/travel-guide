@@ -185,13 +185,18 @@ body.home {
 .horizontal .tiles.deck p {
   -webkit-margin-after: 0;
 }
+.horizontal .tiles.deck p img {
+  vertical-align: middle;
+}
 .horizontal .tiles .reviews {
   font-size: 12px;
   padding-left: 5px;
 }
-.horizontal .tiles img {
+.horizontal .tiles .venue img {
   max-width: 250px;
   vertical-align: middle;
+  max-height: 156px;
+  width: 100%;
 }
 .horizontal .tiles.column .venue {
   position: relative;
