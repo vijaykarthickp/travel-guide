@@ -23,15 +23,15 @@ exports.city_show = function(req, res) {
   let city = req.params.city === 'nyc' ? 'newyorkcity' : req.params.city;
   let date = req.params.date;
   let processedData = {};
-
-
+  let seasonData = {};
+  let season = "";
   let listData = [
     {season: 'Spring', list:[]},
     {season: 'Summer', list:[]},
     {season: 'Autumn', list:[]},
     {season: 'Winter', list:[]}
   ];
-console.log("END");
+  let seasonQuery = query.seasons;
   async.waterfall([
     //Search for processed data
     function(callback){
@@ -39,10 +39,10 @@ console.log("END");
       const dateExp = date.split('-');
       const month = dateExp[1]*1;
 
-      let season = month <=4 ? 'winter' : '';
-      season = !season && month > 5 && month < 9 ? 'summer' : season;
-      season = !season && month > 11 ? 'winter' : season;
-      season = !season ? 'summer' : season;
+      season = month >=3 & month <=5 ? 'Spring' : '';
+      season = !season && month >=6 & month <=8 ? 'summer' : season;
+      season = !season && month >= 9 && month <= 11 ? 'autumn' : season;
+      season = !season && (month > 11 || month < 3) ? 'winter' : season;
 
       jsonFile.readFile(data, function(err, jsonString) {
         if(err)
@@ -56,6 +56,14 @@ console.log("END");
            Object.keys(jsonString[city][property]).forEach((index) => {
              if (typeof jsonString[city][property][index].tags == "undefined") {
                 searchData[property].push(jsonString[city][property][index]);
+              }
+              else if (seasonQuery) {
+                seasonsQ = seasonQuery.split(',');
+                seasonsQ.forEach(function(season_q) {
+                  if ( jsonString[city][property][index].tags.indexOf(season_q) != -1) {
+                    searchData[property].push(jsonString[city][property][index]);
+                  }
+                });
               }
               else if ( jsonString[city][property][index].tags.indexOf(season) != -1) {
                 searchData[property].push(jsonString[city][property][index]);
@@ -76,8 +84,9 @@ console.log("END");
       });
     }else{
       filters = query.filters;
+
       let filterObj = {};
-      if (typeof filters !="undefined" || filters!="") {
+      if (typeof filters !="undefined" && filters!="") {
 
         filters = filters.split(',');
         filters.forEach(function(filter) {
@@ -115,14 +124,36 @@ console.log("END");
         filterObj.things_todo = "true";
         filterObj.restaurants = "true";
       }
-      console.log(result);
+      filterObj[season] = "true";
+      if (typeof seasonQuery !="undefined" && seasonQuery!="") {
+        seasonsQ = seasonQuery.split(',');
+        seasonsQ.forEach(function(season_q) {
+          if (season_q == "summer") {
+            filterObj['summer'] = 'true';
+          }
+          if (season_q == "winter") {
+            filterObj['winter'] = 'true';
+          }
+          if (season_q == "spring") {
+            filterObj['spring'] = 'true';
+          }
+          if (season_q == "autumn") {
+            filterObj['autumn'] = 'true';
+          }
+        });
+      }
+      else {
+
+      }
+      console.log(filterObj);
+      console.log(seasonQuery);
       return res.render('city', {
         city: city,
         date: date,
         data: result,
         listData: listData,
-        filter : filterObj
-
+        filter : filterObj,
+        season : season,
       });
     }
   });
