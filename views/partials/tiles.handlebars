@@ -1,8 +1,18 @@
+<script language="javascript">
+  $(function(){
+
+
+
+  });
+</script>
+
 <div class="tiles">
   <div class="venue">
     <div class="favorites">
       <div class="favorites-icon">
-        <a href="#"><img src="../../assets/img/icons-heart.png"></a>
+          <a href="#" id="{{tags}}" >
+              <img id="{{title}}" onclick='$(this).btnClick("{{tags}}","{{title}}");' src="../../assets/img/icons-heart.png">
+          </a>
       </div>
     </div>
     <a href="#popup1"><img src="{{image}}"></a>

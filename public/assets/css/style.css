@@ -10,6 +10,7 @@ body.home {
 /*body.nyc {
   background: url('../img/nyc.jpg');
 }*/
+
 .search-form {
   width: 500px;
   background: white;
@@ -360,4 +361,17 @@ content: "";
 input[type="date"] {
 width: 203px;
     height: 25px;
+}
+
+
+.saved-lists {
+  width: 100%;
+}
+.saved-lists a{
+  width: 70%;
+}
+
+.saved-lists p {
+  float:right;
+  width: 20%;
 }

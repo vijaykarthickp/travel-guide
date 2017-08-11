@@ -2,8 +2,7 @@
   <div class="lists-header">
     My saved lists
   </div>
-  {{> lists-category value="Spring" }}
-  {{> lists-category value="Summer" }}
-  {{> lists-category value="Autumn" }}
-  {{> lists-category value="Winter" }}
+  {{#each listData}}
+    {{> lists-category value=this}}
+  {{/each}}
 </figure>
