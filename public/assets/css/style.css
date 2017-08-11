@@ -10,6 +10,7 @@ body.home {
 /*body.nyc {
   background: url('../img/nyc.jpg');
 }*/
+
 .search-form {
   width: 500px;
   background: white;
@@ -28,10 +29,50 @@ body.home {
   position: absolute;
   left: 35%;
 }*/
-
+.horizontal .header-bar {
+  width: 100%;
+  overflow: hidden;
+  height: 45px;
+}
+.horizontal .header-bar .header-account-menu {
+  outline: 0;
+  padding: .46153846em .61538462em .46153846em .61538462em;
+  font-size: 1em;
+  line-height: 1.45;
+  cursor: pointer;
+  right: 25px;
+  background: 0 0;
+  border-radius: 0;
+  font-weight: 400;
+  float: right;
+  text-align: right;
+  color: #68a19a;
+  border: 0;
+  width: 100%;
+  position: absolute;
+  top: 5px;
+}
+.horizontal .header-bar .logo {
+  position: absolute;
+  margin-top: 5px;
+  left: 60px;
+}
+.horizontal .header-bar .header-account-menu .btn-label:hover {
+  border-radius: .23076923em;
+    background: #edf7ff;
+    color: #0065b8;
+}
+.horizontal .header-bar .header-account-menu .btn-label {
+  display: inline;
+  padding: 0;
+  pointer-events: none;
+}
+.horizontal .header-bar .header-account-menu .btn-label .icon-toggle {
+  vertical-align: middle;
+}
 .horizontal .header .city-title {
   position: absolute;
-  top: 65px;
+  top: 110px;
   text-align: center;
   width: 100%;
 }
@@ -49,7 +90,7 @@ body.home {
 }
 .horizontal .left-rail {
   position: absolute;
-  top: 263px;
+  top: 300px;
   left: 20px;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
@@ -173,6 +214,60 @@ body.home {
   margin-right: 10px;
   vertical-align: top;
 }
+.horizontal .tiles .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10000;
+}
+.horizontal .tiles .overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.horizontal .tiles .popup {
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  max-height: 87%;
+  overflow-x: scroll;
+}
+.horizontal .tiles .popup .popup-venue-image img {
+  width: 100%;
+  max-height: 412px;
+}
+.horizontal .tiles .popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.horizontal .tiles .popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.horizontal .tiles .popup .close:hover {
+  color: #06D85F;
+}
+.horizontal .tiles .popup .content {
+  max-height: 80%;
+  overflow: auto;
+}
 .horizontal .tiles .category h2 {
   -webkit-margin-before: 0;
   -webkit-margin-after: 5px;
@@ -266,4 +361,17 @@ content: "";
 input[type="date"] {
 width: 203px;
     height: 25px;
+}
+
+
+.saved-lists {
+  width: 100%;
+}
+.saved-lists a{
+  width: 70%;
+}
+
+.saved-lists p {
+  float:right;
+  width: 20%;
 }
