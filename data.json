@@ -51,7 +51,7 @@
         "address": "79 Crosby St, New York, NY 10012",
         "phone" : "866-573-4235",
         "timings": "9am to 6pm",
-        "tags" : "spring,summer,autumn,winter",
+        "tags" : "winter",
         "ratings" : "4",
         "totalRatings" : "653"
       }
@@ -154,7 +154,7 @@
         "link" : "http://www.travelandleisure.com/travel-guide/new-york-city/things-to-do/one-world-trade-center",
         "address": "1 World Financial Center, New York, NY 10007 United States",
         "timings": "9am to 6pm",
-        "tags" : "spring,summer,autumn,winter",
+        "tags" : "spring",
         "ratings" : "4",
         "totalRatings" : "5"
       }

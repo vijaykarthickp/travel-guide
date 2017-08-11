@@ -2,7 +2,11 @@
 <head>
   <title>My {{season}} Favorites</title>
 <link rel="stylesheet" href="../../assets/css/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../../assets/javascript/data.js"></script>
+<script src="../../assets/javascript/city.js"></script>
 </head>
 <body class="{{ city }} horizontal">
   <div class="box">
@@ -12,7 +16,7 @@
       </div>
       {{> form }}
     </section>
-    <section class="content">
+    <section class="content lists">
       {{#if data.hotels}}
         <figure class="tiles column">
           <div class="category"><h2>Hotels</h2></div>
