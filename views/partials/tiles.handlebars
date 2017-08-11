@@ -10,9 +10,11 @@
   <div class="venue">
     <div class="favorites">
       <div class="favorites-icon">
-          <a href="#" id="{{tags}}" >
-              <img id="{{title}}" onclick='$(this).btnClick("{{tags}}","{{title}}");' src="../../assets/img/icons-heart.png">
-          </a>
+        {{#if showicons}}
+          <a href="#" id="{{tags}}">
+            <img id="{{title}}" onclick='$(this).btnClick("{{tags}}","{{title}}");' src="../../assets/img/icons-heart.png">
+           </a>
+        {{/if}}
       </div>
     </div>
     <a href="#popup1"><img src="{{image}}"></a>

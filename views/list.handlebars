@@ -1,53 +1,142 @@
 <html>
 <head>
+  <title>My {{season}} Favorites</title>
 <link rel="stylesheet" href="../../assets/css/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../../assets/javascript/data.js"></script>
+<script src="../../assets/javascript/city.js"></script>
 </head>
 <body class="{{ city }} horizontal">
   <div class="box">
-    <section class="header">
-      <div class="city-title">
-        <h1>Favorites</h1>
+    <section class="header-bar">
+      <div class="logo">
+        <a class="full-logo desktop-only" href="/" data-action="primary-nav-logo"><svg xmlns="http://www.w3.org/2000/svg" width="115" height="33" viewBox="10 0 528 167" xml:space="preserve" fill="#000000">
+          <title>Travel + Leisure</title>
+          <g class="a">
+            <polyline points="448.8 41.4 485 41.4 485 77.2 491.6 77.2 491.6 41.4 528 41.4 528 35.4 491.6 35.4 491.6 0.6 485 0.6 485 35.4 448.8 35.4 448.8 41.4 " class="b"></polyline>
+            <path d="M320.2 167c-20.8 0-34.8-12-34.8-30V88.5h18.4v48.5c0 10.3 8.8 14 16.4 14 10.3 0 16.6-5.4 16.6-14V88.5H355.2v48.5C355.2 155.2 341.5 167 320.2 167" class="b"></path>
+            <path d="M238.4 167c-15.6 0-29.2-4.9-41.4-14.9l-0.8-0.6 10.5-12.7 0.8 0.6c7.1 5.7 17.2 12.3 31.2 12.3 7.4 0 15.9-2.5 15.9-9.6 0-6.1-6.3-7.7-17.8-8.7 -14.4-0.9-36.3-2.3-36.3-22.7 0-18.1 16.4-24.5 31.7-24.5 15.1 0 28.5 5.5 35.5 10.2l0.9 0.6 -10.6 12.9 -0.8-0.6c-2.4-1.8-11.5-7.8-25.4-7.8 -6.3 0-13 2.1-13 8.1 0 5.4 8.3 6 17.1 6.7l1.4 0.1c13.3 0.9 35.6 2.4 35.6 24C272.8 157.4 260.3 167 238.4 167" class="b"></path>
+          </g>
+          <g class="a">
+            <polyline points="526.2 164.7 459.8 164.7 459.8 88.5 523.6 88.5 523.6 104.6 478 104.6 478 117 505.4 117 505.4 133 478 133 478 148.7 526.2 148.7 526.2 164.7 "></polyline>
+            <rect x="165.2" y="88.5" width="18.3" height="76.2"></rect>
+            <polyline points="149.7 164.7 83.2 164.7 83.2 88.5 147.1 88.5 147.1 104.6 101.5 104.6 101.5 117 128.9 117 128.9 133 101.5 133 101.5 148.7 149.7 148.7 149.7 164.7 "></polyline>
+            <polyline points="72.6 164.7 10.7 164.7 10.7 88.5 29 88.5 29 148.7 72.6 148.7 72.6 164.7 "></polyline>
+            <path d="M416.6 121.7h-25.6V104.3h24.5c2.9 0 5.8 0.3 8.2 2.9 1.5 1.5 2.3 3.5 2.3 5.8C425.9 117.9 421.9 121.7 416.6 121.7M429.7 134.3c9.3-4.4 14.6-12.2 14.6-21.4 0-6-2.3-11.7-6.4-16 -5.4-5.6-12.9-8.4-23-8.4h-42.1v76.2h18.3V137.5h20.5l15 27.3h21L429.7 134.3z"></path>
+            <polyline points="464.1 76.8 402.3 76.8 402.3 0.7 420.6 0.7 420.6 60.9 464.1 60.9 464.1 76.8 "></polyline>
+            <polyline points="389.8 76.8 323.5 76.8 323.5 0.7 387.2 0.7 387.2 16.8 341.7 16.8 341.7 29.2 369.1 29.2 369.1 45.2 341.7 45.2 341.7 60.9 389.8 60.9 389.8 76.8 "></polyline>
+            <polyline points="281 76.8 265.6 76.8 230.3 0.7 250.9 0.7 273.6 53.8 296.4 0.7 316.3 0.7 281 76.8 "></polyline>
+            <polyline points="45.1 76.8 26.9 76.8 26.9 16.8 0 16.8 0 0.7 71.9 0.7 71.9 16.8 45.1 16.8 45.1 76.8 "></polyline>
+            <path d="M192.6 46.4l10.1-23.5 10.1 23.5H192.6M210.6 0.7h-15.2l-35.3 76.1h19.4l6.7-15.7h33l6.8 15.7h20L210.6 0.7z"></path>
+            <path d="M124.7 33.9H99.1V16.5h24.4c2.9 0 5.8 0.3 8.1 2.9 1.5 1.5 2.3 3.5 2.3 5.8C134 30.1 130 33.9 124.7 33.9M137.8 46.5c9.3-4.4 14.6-12.1 14.6-21.3 0-6-2.3-11.6-6.4-16 -5.4-5.6-12.9-8.4-23-8.4H80.9v76.1h18.2V49.6h20.4l15 27.2h20.9L137.8 46.5z"></path>
+          </g>
+        </svg></a>
       </div>
-      {{> form }}
+      <button class="header-account-menu">
+        <span class="btn-label">
+          <span class="nonArrangedUser">
+            Hello, John
+          </span>
+          <i class="icon-toggle material-icons">
+            keyboard_arrow_down
+          </i>
+        </span>
+      </button>
     </section>
-    <section class="content">
-    <figure class="left-rail">
-      {{> filters }}
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>What to See</h2></div>
-      {{#each data.events}}
-        {{> tiles data=this }}
-      {{/each}}
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Things to Do</h2></div>
-     {{#each data.things-todo}}
-          {{> tiles data=this }}
-        {{/each}}
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Hotels</h2></div>
-        {{#each data.hotels}}
-          {{> tiles data=this }}
-        {{/each}}
-      </div>
-    </figure>
-    <figure class="tiles column">
-      <div class="category"><h2>Food & Drinks</h2></div>
-      {{#each data.restaurants}}
-        {{> tiles data=this }}
-      {{/each}}
-    </figure>
+    <div id="header-parent">
+      <section class="header" >
+        <img class="bg-img" id="background-img" src="../../assets/img/nyc.jpg">
+        <div class="city-title">
+          <h1>New York City</h1>
+        </div>
+        {{> form }}
+      </section>
+    </div>
+    <!-- I got these buttons from simplesharebuttons.com -->
+    <!-- I got these buttons from simplesharebuttons.com -->
+<div id="share-buttons">
 
 
-    <figure class="tiles column">
-      <div class="category"><h2>Related Articles</h2></div>
-      {{#each data.articles}}
-        {{> tiles data=this }}
-      {{/each}}
-    </figure>
+    <!-- Email -->
+    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    </a>
+
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+
+    <!-- Google+ -->
+    <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+    </a>
+
+    <!-- Pinterest -->
+    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+        <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+    </a>
+
+    <!-- Print -->
+    <a href="javascript:;" onclick="window.print()">
+        <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+    </a>
+
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+
+
+</div>
+    <section class="content lists">
+      {{#if data.hotels}}
+        <figure class="tiles column">
+          <div class="category"><h2>Hotels</h2></div>
+            {{#each data.hotels}}
+              {{> tiles data=this }}
+            {{/each}}
+          </figure>
+      {{/if}}
+      {{#if data.restaurants}}
+        <figure class="tiles column">
+          <div class="category"><h2>Food & Drinks</h2></div>
+          {{#each data.restaurants}}
+            {{> tiles data=this }}
+          {{/each}}
+        </figure>
+      {{/if}}
+      {{#if data.events}}
+        <figure class="tiles column">
+          <div class="category"><h2>Events</h2></div>
+          {{#each data.events}}
+            {{> tiles data=this }}
+          {{/each}}
+        </figure>
+      {{/if}}
+      {{#if data.things-todo}}
+        <figure class="tiles column">
+          <div class="category"><h2>Things to Do</h2></div>
+          {{#each data.things-todo}}
+            {{> tiles data=this }}
+          {{/each}}
+        </figure>
+      {{/if}}
+      {{#if data.articles}}
+        <figure class="tiles column">
+          <div class="category"><h2>Related Articles</h2></div>
+          {{#each data.articles}}
+            {{> tiles data=this showicons="true"}}
+          {{/each}}
+        </figure>
+      {{/if}}
   </section>
 </body>
 </html>
