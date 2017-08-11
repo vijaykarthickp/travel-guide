@@ -236,7 +236,7 @@ canvas {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-  z-index: 10000;
+  z-index: 99999999;
 }
 .horizontal .tiles .overlay:target {
   visibility: visible;
