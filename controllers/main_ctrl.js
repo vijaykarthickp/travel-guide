@@ -58,11 +58,10 @@ exports.city_show = function(req, res) {
         date: err
       });
     }else{
-      console.log(result);
       return res.render('city', {
         city: city,
         date: date,
-        date: result
+        data: result
       });
     }
   });

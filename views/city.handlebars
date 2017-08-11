@@ -17,12 +17,34 @@
     </figure>
     <figure class="tiles column">
       <div class="category"><h2>Hotels</h2></div>
-        {{> tiles }}
-        {{> tiles }}
-        {{> tiles }}
-        {{> tiles }}
-        {{> tiles }}
+        {{#each data.hotels}}
+          {{> tiles data=this }}
+        {{/each}}
       </div>
+    </figure>
+    <figure class="tiles column">
+      <div class="category"><h2>Food & Drinks</h2></div>
+      {{#each data.restaurants}}
+        {{> tiles data=this }}
+      {{/each}}
+    </figure>
+    <figure class="tiles column">
+      <div class="category"><h2>What to See</h2></div>
+      {{#each data.events}}
+        {{> tiles data=this }}
+      {{/each}}
+    </figure>
+    <figure class="tiles column">
+      <div class="category"><h2>Things to Do</h2></div>
+      {{#each data.things-todo}}
+        {{> tiles data=this }}
+      {{/each}}
+    </figure>
+    <figure class="tiles column">
+      <div class="category"><h2>Related Articles</h2></div>
+      {{#each data.articles}}
+        {{> tiles data=this }}
+      {{/each}}
     </figure>
   </section>
 </body>

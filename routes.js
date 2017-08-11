@@ -7,7 +7,7 @@ exports.initialize = function(app) {
     console.log(colors.yellow(Date.now()));
     next();
   });
-
+  console.log("asdsadsd");
   app.route('/')
     .get(main_ctrl.home)
     .post(main_ctrl.home_search)
