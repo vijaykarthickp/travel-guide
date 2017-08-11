@@ -1,0 +1,124 @@
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+body.home {
+  background: url('/assets/img/travel-guide.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+body.nyc {
+  background: url('/assets/img/nyc.jpg');
+}
+.search-form {
+  width: 500px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  margin: 0 auto;
+
+}
+.home .search-form {
+  top: 48%;
+  position: absolute;
+  left: 35%;
+}
+/*.nyc .search-form {
+  top: 15%;
+  position: absolute;
+  left: 35%;
+}*/
+
+.filters {
+  width: 150px;
+  background: rgba(0,0,0,0.4);
+  padding: 10px;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+}
+.filters h3 {
+  color: #fff;
+  font-size: 20px;
+  font-family: arial, sans-serif;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+.filters p {
+  color: #fff;
+  font-size: 18px;
+  background: #68a19a;
+  padding: 3px;
+  text-align: center;
+  border-radius: 3px;
+  font-family: arial, sans-serif;
+}
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+.header {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 150px;
+  flex: 0 1 100px;
+}
+.content {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+  text-align: center;
+  flex: 1 1 auto;
+}
+.footer {
+  flex: 0 1 1px;
+}
+.tiles.column {
+  width: 250px;
+  background: rgba(0,0,0,0.4);
+  padding: 10px;
+  margin: 0;
+  font-family: arial, sans-serif;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  overflow: auto;
+  max-height: 57vh;
+}
+
+.tiles {
+  width: 100%;
+  background: rgba(255,255,255,1);
+  margin-bottom: 10px;
+}
+.tiles.deck h3 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+.tiles.deck h3 a {
+  text-decoration: none;
+}
+.tiles.deck {
+  padding: 10px 25px;
+  width: 80%;
+}
+#city {
+  width: 190px;
+  height: 25px;
+}
+input[type="date"]:before {
+content: attr(placeholder) !important;
+color: #aaa;
+       margin-right: 0.5em;
+}
+input[type="date"]:focus:before,
+	input[type="date"]:valid:before {
+content: "";
+	}
+input[type="date"] {
+width: 203px;
+    height: 25px;
+}

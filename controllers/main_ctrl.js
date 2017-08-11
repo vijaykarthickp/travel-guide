@@ -2,13 +2,15 @@ const jsonFile = require('jsonfile');
 const async = require('async');
 
 exports.home = function(req, res) {
-  res.render('index');
+  res.render('index.handlebars');
 }
 
 exports.home_search = function(req, res){
   if(req.body.city && 'new york' == req.body.city.toLowerCase()) {
     let city = 'nyc/'
     res.redirect('/city/'+city+req.body.date);
+  }else {
+    res.redirect('/city/'+req.body.city.toLowerCase()+req.body.date);
   }
 }
 
@@ -50,19 +52,24 @@ exports.city_show = function(req, res) {
       });
     }
   ], function(err, result) {
+    console.log(result)
     if(err){
       console.log(err);
       return res.render('city', {
         city: city,
         date: date,
-        date: err
+        data: err
       });
     }else{
       console.log(result);
       return res.render('city', {
-        city: city,
-        date: date,
-        date: result
+        'city': city,
+        'date': date,
+        'hotels': result.hotels,
+        'events': result.events,
+        'things-todo': result['things-todo'],
+        'restaurants': result.restaurants,
+        'articles': result.articles
       });
     }
   });
