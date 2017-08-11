@@ -42,10 +42,10 @@ exports.home_search = function(req, res){
 }
 
 exports.list = function(req, res){
-  page_callback('list', req, res);
-}
-
-function page_callback(page, req, res){
+  const url_parts = url.parse(req.url, true);
+  let query = url_parts.query;
+  let season_q = query.season;
+  console.log(colors.red(season_q));
   let city = req.params.city === 'nyc' ? 'newyorkcity' : req.params.city;
   let date = req.params.date;
   let processedData = {};
@@ -75,13 +75,14 @@ function page_callback(page, req, res){
   ], function(err, result) {
     if(err){
       console.log(err);
-      return res.render(page, {
-        date: err
+      return res.render('list', {
+        data: err
       });
     }else{
-             // console.log('result');
-      return res.render(page, {
-        data: result
+      console.log(colors.red(season_q));
+      return res.render('list', {
+        data: result,
+        season: season_q
       });
     }
   });
@@ -134,7 +135,7 @@ exports.city_show = function(req, res) {
               else if (seasonQuery) {
                 seasonsQ = seasonQuery.split(',');
                 seasonsQ.forEach(function(season_q) {
-                  if ( jsonString[city][property][index].tags.indexOf(season_q) != -1) {
+                  if ( jsonString[city][property][index].tags.indexOf(season_q) != -1 && season_q) {
                     searchData[property].push(jsonString[city][property][index]);
                   }
                 });
@@ -220,8 +221,10 @@ exports.city_show = function(req, res) {
       else {
 
       }
-      console.log(filterObj);
-      console.log(seasonQuery);
+      let cityText = "";
+      if (city == "newyorkcity") {
+        cityText = "New York City"
+      }
       return res.render('city', {
         city: city,
         date: date,
@@ -229,6 +232,7 @@ exports.city_show = function(req, res) {
         listData: listData,
         filter : filterObj,
         season : season,
+        cityText: cityText
       });
     }
   });
