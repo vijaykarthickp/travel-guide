@@ -2,14 +2,41 @@ const jsonFile = require('jsonfile');
 const async = require('async');
 
 
+  let listData = [
+    {
+      season: 'Spring',
+      list:[],
+      count: 0
+    },
+    {
+      season: 'Summer',
+      list:[],
+      count: 0
+    },
+    {
+      season: 'Autumn',
+      list:[],
+      count: 0
+    },
+    {
+     season: 'Winter',
+     list:[],
+     count: 0
+    }
+  ];
+
 exports.home = function(req, res) {
+  console.log("HOME");
   res.render('index');
 }
 
 exports.home_search = function(req, res){
+  console.log('home_search');
   if(req.body.city && 'new york' == req.body.city.toLowerCase()) {
     let city = 'nyc/'
     res.redirect('/city/'+city+req.body.date);
+  }else {
+    res.redirect('/city/'+req.body.city+"/"+req.body.date);
   }
 }
 
@@ -22,12 +49,7 @@ exports.city_show = function(req, res) {
   let processedData = {};
 
 
-  let listData = [
-    {season: 'Spring', list:[]},
-    {season: 'Summer', list:[]},
-    {season: 'Autumn', list:[]},
-    {season: 'Winter', list:[]}
-  ];
+
 console.log("END");
   async.waterfall([
     //Search for processed data
@@ -47,8 +69,7 @@ console.log("END");
           return callback(err);
 
          let searchData = new Array();
-         console.log(jsonString[city]);
-
+        //  console.log(jsonString[city]);
          Object.keys(jsonString[city])
          .forEach((property) => {
            searchData[property] = new Array();
@@ -61,20 +82,21 @@ console.log("END");
               }
            });
          });
-
+         console.log("YO");
          return callback(null, searchData);
       });
     }
   ], function(err, result) {
+    console.log("SUCESS");
     if(err){
       console.log(err);
-      return res.render('city', {
+      res.render('city', {
         city: city,
         date: date,
         data: err
       });
     }else{
-      return res.render('city', {
+      res.render('city', {
         city: city,
         date: date,
         data: result,
@@ -87,5 +109,12 @@ console.log("END");
 
 
 exports.save_to_list = function(req, res){
-
+  console.log(req.params);
+  listData.forEach((prop) => {
+    if(prop.season === req.params.season){
+      prop.count++;
+      prop.list.push(req.params.name);
+    }
+  });
+  console.log(listData);
 }
