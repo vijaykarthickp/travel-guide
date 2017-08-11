@@ -415,3 +415,7 @@ border: 0;
 box-shadow: 0;
 display: inline;
 }
+
+.saved-lists p {
+    margin: 0px;
+}
