@@ -61,6 +61,22 @@
         {{> filters }}
         {{> lists }}
       </figure>
+    {{#if data.things-todo}}
+        <figure class="tiles column">
+          <div class="category"><h2>Things to Do</h2></div>
+          {{#each data.things-todo}}
+            {{> tiles data=this showicons="true"}}
+          {{/each}}
+        </figure>
+    {{/if}}
+    {{#if data.events}}
+      <figure class="tiles column">
+        <div class="category"><h2>Events</h2></div>
+        {{#each data.events}}
+          {{> tiles data=this showicons="true"}}
+        {{/each}}
+      </figure>
+    {{/if}}
     {{#if data.hotels}}
       <figure class="tiles column">
         <div class="category"><h2>Hotels</h2></div>
@@ -77,22 +93,7 @@
         {{/each}}
       </figure>
     {{/if}}
-    {{#if data.events}}
-      <figure class="tiles column">
-        <div class="category"><h2>Events</h2></div>
-        {{#each data.events}}
-          {{> tiles data=this showicons="true"}}
-        {{/each}}
-      </figure>
-    {{/if}}
-    {{#if data.things-todo}}
-      <figure class="tiles column">
-        <div class="category"><h2>Things to Do</h2></div>
-        {{#each data.things-todo}}
-          {{> tiles data=this showicons="true"}}
-        {{/each}}
-      </figure>
-    {{/if}}
+
     {{#if data.articles}}
       <figure class="tiles column">
         <div class="category"><h2>{{cityText}} Travel Ideas</h2></div>
