@@ -10,7 +10,7 @@ exports.initialize = function(app) {
   console.log("asdsadsd");
   app.route('/')
     .get(main_ctrl.home)
-    .post(main_ctrl.home_search)
+    .post(main_ctrl.home_search);
 
   app.route('/city/:city/:date')
   .get(main_ctrl.city_show);
