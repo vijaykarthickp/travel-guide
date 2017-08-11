@@ -20,4 +20,8 @@ exports.initialize = function(app) {
   .get(main_ctrl.city_show);
 
 
+  app.route('/save/:season/:name')
+  .post(main_ctrl.save_to_list);
+
+
 }

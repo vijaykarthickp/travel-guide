@@ -1,9 +1,19 @@
+<script language="javascript">
+  $(function(){
+
+
+
+  });
+</script>
+
 <div class="tiles">
   <div class="venue">
     <div class="favorites">
       <div class="favorites-icon">
         {{#if showicons}}
-          <a href="#"><img src="../../assets/img/icons-heart.png"></a>
+          <a href="#" id="{{tags}}">
+            <img id="{{title}}" onclick='$(this).btnClick("{{tags}}","{{title}}");' src="../../assets/img/icons-heart.png">
+           </a>
         {{/if}}
       </div>
     </div>

@@ -3,14 +3,41 @@ const async = require('async');
 const colors = require('colors');
 const url = require('url');
 
+  let listData = [
+    {
+      season: 'Spring',
+      list:[],
+      count: 0
+    },
+    {
+      season: 'Summer',
+      list:[],
+      count: 0
+    },
+    {
+      season: 'Autumn',
+      list:[],
+      count: 0
+    },
+    {
+     season: 'Winter',
+     list:[],
+     count: 0
+    }
+  ];
+
 exports.home = function(req, res) {
+  console.log("HOME");
   res.render('index');
 }
 
 exports.home_search = function(req, res){
+  console.log('home_search');
   if(req.body.city && 'new york' == req.body.city.toLowerCase()) {
     let city = 'nyc/'
     res.redirect('/city/'+city+req.body.date);
+  }else {
+    res.redirect('/city/'+req.body.city+"/"+req.body.date);
   }
 }
 
@@ -79,6 +106,7 @@ exports.city_show = function(req, res) {
     {season: 'Winter', list:[]}
   ];
   let seasonQuery = query.seasons;
+
   async.waterfall([
     //Search for processed data
     function(callback){
@@ -117,14 +145,15 @@ exports.city_show = function(req, res) {
               }
            });
          });
-
+         console.log("YO");
          return callback(null, searchData);
       });
     }
   ], function(err, result) {
+    console.log("SUCESS");
     if(err){
       console.log(err);
-      return res.render('city', {
+      res.render('city', {
         city: city,
         date: date,
         data: err
@@ -209,5 +238,12 @@ exports.city_show = function(req, res) {
 
 
 exports.save_to_list = function(req, res){
-
+  console.log(req.params);
+  listData.forEach((prop) => {
+    if(prop.season === req.params.season){
+      prop.count++;
+      prop.list.push(req.params.name);
+    }
+  });
+  console.log(listData);
 }
